@@ -1,0 +1,31 @@
+header,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+}
+
+form button {
+  background-color: rgb(45, 186, 241);
+}
+
+.todo-completed {
+  text-decoration: line-through;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-list{
+    list-style: none;
+}
+.todoDiv{
+    display: flex;
+}
