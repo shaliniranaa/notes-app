@@ -1,7 +1,6 @@
 const todoButton = document.querySelector(".todo-btn");
 const todoInput = document.querySelector(".todo-input");
 const todoList = document.querySelector(".todo-list");
-// const aTodos = ["test","test1"];
 
 //event listerners
 
@@ -39,6 +38,14 @@ function addToDo(event) {
   let newTodo = createToDoListItem();
   todoDiv.appendChild(newTodo);
 
+  //delete button
+
+  let deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.innerText = "Delete";
+  deleteBtn.addEventListener("click", deleteToDo);
+  todoDiv.appendChild(deleteBtn);
+
   //event listerner for checkbox
 
   radioBtn.addEventListener("change", function (e) {
@@ -50,4 +57,9 @@ function addToDo(event) {
 
   //append to list
   todoList.appendChild(todoDiv);
+}
+
+function deleteToDo(event) {
+  let itemToDelete = event.currentTarget.parentElement;
+  todoList.removeChild(itemToDelete);
 }
