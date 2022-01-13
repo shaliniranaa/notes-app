@@ -9,11 +9,11 @@ todoButton.addEventListener("click", addToDo);
 
 //Functions
 
-function createCheckbox() {
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.name = "todoCB";
-  return checkbox;
+function createRadioBtn() {
+  let radioBtn = document.createElement("input");
+  radioBtn.type = "radio";
+  radioBtn.name = "todoRadioBtn";
+  return radioBtn;
 }
 
 function createToDoListItem() {
@@ -31,9 +31,9 @@ function addToDo(event) {
   todoDiv.classList.add("todoDiv");
 
   //create checkbox
-  var checkbox = createCheckbox();
+  var radioBtn = createRadioBtn();
   //  checkbox.value = "1";
-  todoDiv.appendChild(checkbox);
+  todoDiv.appendChild(radioBtn);
 
   // create li
   let newTodo = createToDoListItem();
@@ -41,7 +41,7 @@ function addToDo(event) {
 
   //event listerner for checkbox
 
-  checkbox.addEventListener("change", function (e) {
+  radioBtn.addEventListener("change", function (e) {
     debugger;
     if (e.currentTarget.value) {
       newTodo.classList.add("todo-completed");
